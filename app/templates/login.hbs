@@ -15,7 +15,7 @@
         <div class="field">
           <label >Ingresa tu correo</label>
             <div class="ui left icon input">
-              {{input type="email" placeholder="corre electrónico"}}
+              {{input type="email" placeholder="corre electrónico" value=email}}
               <i class="mail icon"></i>
             </div>
         </div>
@@ -23,11 +23,11 @@
         <div class="field">
           <label >Ingresa tu contraseña</label>
           <div class="ui left icon input">
-            {{input type="password" placeholder="contraseña"}}
+            {{input type="password" placeholder="contraseña" value=password}}
             <i class="lock icon"></i>
           </div>
         </div>
-        <center><div class="ui blue submit button" style="height: 50%;">Ingresa</div></center>
+        <center><button class="ui blue submit button" style="height: 50%;" {{action 'signIn' 'email'}}>Ingresa</button></center>
         </div>
       </div>
 
@@ -47,10 +47,10 @@
       Or
     </div>
     <div class="center aligned column">
-      <div class="ui big green labeled icon button">
+      <button class="ui big green labeled icon button" {{action 'irCrearCuenta'}}>
         <i class="signup icon"></i>
         Crea tu cuenta
-      </div>
+      </button>
     </div>
 
     </div>
