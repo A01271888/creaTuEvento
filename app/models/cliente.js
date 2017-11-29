@@ -8,10 +8,10 @@ export default DS.Model.extend({
 
   eventos: DS.hasMany('registro-evento'),
 
-  nombreCompleto: computed('nombre', 'apellidos', function() {
-    let nombre = this.get('nombre');
-    let apellidos = this.get('apellidos');
-
-    return `${nombre} ${apellidos}`;
-  })
+  // nombreCompleto: computed('nombre', 'apellidos', function() {
+  //   let nombre = this.get('nombre');
+  //   let apellidos = this.get('apellidos');
+  //
+  //   return `${nombre} ${apellidos}`;
+  // })
 });

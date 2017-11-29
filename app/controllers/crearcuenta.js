@@ -31,24 +31,23 @@ export default Ember.Controller.extend({
         );
         //console.log("cliente ", nombre, mail );
         registrationPromise.then((response)=>{
-          this.transitionToRoute('profileC');
-            // this.store.createRecord('cliente', {
-            //   nombre: nombre,
-            //   apellidos: apellidos,
-            //   telefono: telefono,
-            //   mail: email,
-            //   id: response.uid
-            // }).save().then(()=>{
-            //    window.swal({
-            //      title: 'Yuju!(:',
-            //      text: 'Te registraste correctamente',
-            //      confirmButtonText: 'Comencemos /,,/'
-            //    }).then(()=>{
-            //      this.transitionToRoute('profileC');
-            //    });
-            // });
+            this.store.createRecord('cliente', {
+              nombre: nombre,
+              apellidos: apellidos,
+              telefono: telefono,
+              mail: email,
+              id: response.uid
+            }).save().then(()=>{
+               window.swal({
+                 title: 'Listo!',
+                 text: 'Te registraste correctamente, ya puedes comenzar a crear eventos.',
+                 confirmButtonText: 'OK',
+                 type: 'success'
+               }).then(()=>{
+                 this.transitionToRoute('profileC');//, { queryParams: { cliente_id: id }});
+               });
+            });
         });
-
         registrationPromise.catch((error)=>{
           this.showError(error.message);
         });

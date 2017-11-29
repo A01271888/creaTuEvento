@@ -9,7 +9,7 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   this.route('login', {path: '/'});
   this.route('crearcuenta');
-  this.route('profileC');
+  this.route('profileC', {path: 'profileC/:cliente_id'});
   this.route('profileA');
 });
 
